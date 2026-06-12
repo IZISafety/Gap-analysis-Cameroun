@@ -6,52 +6,33 @@
 <title>Harmonisation des profils utilisateurs — Cameroun</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --navy: #1C2E5C;
-    --blue: #2F5496;
-    --green-bg: #B7E1CD;
-    --green-text: #1a6b4a;
-    --red-bg: #FDDCDC;
-    --red-text: #A12B2B;
-    --amber-bg: #FEF3C7;
-    --amber-text: #92400E;
-    --gray-bg: #F0F2F5;
-    --border: #c8d0dd;
-    --text: #1a1a2e;
-    --text-sec: #555;
+    --navy: #1C2E5C; --blue: #2F5496;
+    --green-bg: #B7E1CD; --green-text: #1a6b4a;
+    --red-bg: #FDDCDC; --red-text: #A12B2B;
+    --amber-bg: #FEF3C7; --amber-text: #92400E;
+    --gray-bg: #F0F2F5; --border: #c8d0dd;
+    --text: #1a1a2e; --text-sec: #555;
   }
-
   body { font-family: 'DM Sans', sans-serif; background: var(--gray-bg); color: var(--text); min-height: 100vh; }
-
-  .top-bar {
-    background: var(--navy); padding: 12px 24px;
-    display: flex; align-items: center; gap: 14px;
-    position: sticky; top: 0; z-index: 200;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  }
+  .top-bar { background: var(--navy); padding: 12px 24px; display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
   .logo-badge { background: var(--blue); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 5px; text-transform: uppercase; }
   .top-bar h1 { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); }
   .top-bar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
   .lang-toggle { display: flex; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; overflow: hidden; }
   .lang-btn { background: transparent; border: none; color: rgba(255,255,255,0.6); font-family: inherit; font-size: 12px; font-weight: 500; padding: 4px 10px; cursor: pointer; transition: all 0.2s; }
   .lang-btn.active { background: rgba(255,255,255,0.2); color: #fff; }
-
   .tab-nav { background: white; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; gap: 2px; position: sticky; top: 49px; z-index: 150; overflow-x: auto; }
   .tab-btn { background: none; border: none; font-family: inherit; font-size: 13px; font-weight: 400; color: var(--text-sec); padding: 12px 16px; cursor: pointer; border-bottom: 2.5px solid transparent; transition: all 0.2s; white-space: nowrap; }
   .tab-btn:hover { color: var(--blue); }
   .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 500; }
-
   .search-bar { background: white; border-bottom: 1px solid var(--border); padding: 8px 24px; display: flex; align-items: center; gap: 10px; }
   .search-bar input { border: 1.5px solid #dde2ea; border-radius: 7px; padding: 6px 12px; font-size: 13px; font-family: inherit; width: 280px; outline: none; transition: border-color 0.2s; }
   .search-bar input:focus { border-color: var(--blue); }
   .row-count { font-size: 12px; color: #999; margin-left: auto; }
-
   .panel { display: none; }
   .panel.active { display: block; }
-
   .table-wrap { overflow: auto; padding: 16px 24px 40px; max-height: calc(100vh - 130px); }
   table { border-collapse: collapse; font-size: 12px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
   th, td { border: 1px solid var(--border); padding: 6px 8px; white-space: nowrap; text-align: center; vertical-align: middle; min-width: 40px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; }
@@ -63,20 +44,17 @@
   tbody tr:nth-child(odd) td:not([style]) { background: #F8F9FB; }
   tbody tr:nth-child(even) td:not([style]) { background: white; }
   tbody tr:hover td { filter: brightness(0.97); }
-
   .impact-wrap { padding: 20px 24px 40px; }
   .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
   .kpi-card { background: white; border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); border: 1px solid var(--border); }
   .kpi-label { font-size: 11px; color: var(--text-sec); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
   .kpi-value { font-size: 26px; font-weight: 600; color: var(--navy); line-height: 1; }
   .kpi-sub { font-size: 11px; color: var(--text-sec); margin-top: 4px; }
-
   .filter-row { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
   .filter-row input { border: 1.5px solid #dde2ea; border-radius: 7px; padding: 6px 12px; font-size: 13px; font-family: inherit; width: 260px; outline: none; }
   .filter-row input:focus { border-color: var(--blue); }
   .filter-row select { border: 1.5px solid #dde2ea; border-radius: 7px; padding: 6px 12px; font-size: 13px; font-family: inherit; outline: none; background: white; cursor: pointer; }
   .results-count { font-size: 12px; color: #999; margin-left: auto; }
-
   .impact-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.07); font-size: 13px; }
   .impact-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
   .impact-table th.center { text-align: center; }
@@ -84,18 +62,15 @@
   .impact-table tr:last-child td { border-bottom: none; }
   .impact-table tr:hover td { background: #F8F9FB; }
   .impact-table td.center { text-align: center; }
-
   .badge { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11px; font-weight: 500; }
   .badge-high { background: var(--red-bg); color: var(--red-text); }
   .badge-mid  { background: var(--amber-bg); color: var(--amber-text); }
   .badge-low  { background: var(--green-bg); color: var(--green-text); }
   .badge-ready { background: #DCFCE7; color: #166534; }
-
   .profile-tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; background: #EEF2F9; color: #2F5496; border: 1px solid #C5D2E8; margin: 2px 2px 2px 0; }
   .change-add { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; background: var(--green-bg); color: var(--green-text); margin: 1px; }
   .change-rm  { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; background: var(--red-bg); color: var(--red-text); margin: 1px; }
   .change-none { font-size: 11px; color: #aaa; font-style: italic; }
-
   .bar-wrap { width: 80px; height: 5px; background: #E5E7EB; border-radius: 99px; display: inline-block; vertical-align: middle; margin-left: 6px; }
   .bar-fill { height: 100%; border-radius: 99px; background: var(--blue); }
   .gauge-wrap { width: 60px; height: 5px; background: #E5E7EB; border-radius: 99px; display: inline-block; vertical-align: middle; margin-left: 6px; }
@@ -176,52 +151,20 @@
 <tr><td>Construction Métallique / Piping / Cuve</td><td>Technicien de sablage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Contrôle - Supervision</td><td>Superviseur contractant</td><td>Tâches de supervision, de vérification des mesures de prévention du chantier</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Contrôle - Supervision</td><td>Superviseur TE</td><td>Tâches de supervision, de vérification des mesures de prévention du chantier</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux sur système alimentés en énergie électrique</td><td>Électricien</td><td>Installation de systèmes électriques / Dépannage et réparation des systèmes électriques / Intervention sur installation sous tension / Contrôles et tests de conformité des réseaux / Mise aux normes des installations</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux sur système alimentés en énergie électrique</td><td>Responsable / superviseur travaux éléctrique</td><td>Rôle de supervision pour les travaux de nature électrique.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux sur système alimentés en énergie électrique</td><td>Intervenant sur panneaux solaires</td><td>Pose, construction, entretien, intervention sur l'ondulateur, nettoyage des panneaux</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Travaux sur système alimentés en énergie électrique</td><td>Électricien</td><td>Installation / Dépannage / Intervention sous tension / Contrôles et tests / Mise aux normes</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Gardiennage / Nettoyage</td><td>Gardiennage / Nettoyage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Génie civil et autres travaux</td><td>Jardinier</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Génie civil et autres travaux</td><td>Opérateur travaux</td><td>A compléter avec les profils de risques mortels</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Génie civil et autres travaux</td><td>Peintre</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Génie civil et autres travaux</td><td>Plombier</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Génie civil et autres travaux</td><td>Magasinier</td><td>Personnel s'occupant du stock lors de  chantiers</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Hydrocurage - Pompage</td><td>Chef de bord de pompage</td><td>Supervise et contrôle depuis le camion l'aspiration et la sécurité du pompage</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td></tr>
-<tr><td>Hydrocurage - Pompage</td><td>Opérateur de pompage</td><td>Met en uvre les moyens de pompage</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td></tr>
-<tr><td>Installation télécom & IT</td><td>Technicien télécom & IT</td><td>Installation de réseaux IT et télécom / Maintenance des systèmes infos / Dépannage / Risque électrique nécessaire</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Levage et manutention</td><td>Chef de manuvre levage</td><td>Personne chargée de conduire une opération de levage, et la seule autorisée à donner des directives à lopérateur de lappareil de levage.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Levage et manutention</td><td>Cariste</td><td>Personne qui conduit / opère l'appareil de levage motorisé et qui a obtenu l'autorisation de le faire.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Levage et manutention</td><td>Grutier</td><td>Personne qui conduit / opère l'appareil de levage motorisé et qui a obtenu l'autorisation de le faire.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Levage et manutention</td><td>Pontier</td><td>Personne qui conduit / opère l'appareil de levage motorisé et qui a obtenu l'autorisation de le faire.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Levage et manutention</td><td>Élingueur</td><td>Personne, formée et entrainée, en charge de laccrochage et du décrochage des accessoires de levage (élingues, manilles et autres) sur la charge et lappareil de levage.</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Levage et manutention</td><td>Chef de manoeuvre levage</td><td>Personne chargée de conduire une opération de levage</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Levage et manutention</td><td>Cariste</td><td>Conduit / opère un appareil de levage motorisé</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Levage et manutention</td><td>Grutier</td><td>Conduit / opère un appareil de levage motorisé</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Levage et manutention</td><td>Élingueur</td><td>Accrochage et décrochage des accessoires de levage</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Lutte contre incendie</td><td>Pompier</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Secours à personne</td><td>Secouriste</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Mécanique / Automatisation / Électrotechnique</td><td>Technicien maintenance électromécanique</td><td>Assure l'entretien, le diagnostic et la réparation d'équipements industriels en combinant compétences mécaniques, électriques et automatismes</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Nettoyage / Dégazage</td><td>Technicien nettoyage / dégazage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Nettoyage HP</td><td>Chef de bord haute pression</td><td>Assure l'alimentation, la puissance et la sécurité de l'installation haute pression</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td></tr>
-<tr><td>Nettoyage HP</td><td>Opérateur haute pression</td><td>Personnel se servant de la lance à haute pression</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td></tr>
-<tr><td>Production / Usine</td><td>Responsable de production</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Station service</td><td>Gérant de station COCO</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Station service</td><td>Chef de piste / pompiste de station COCO</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Station service</td><td>Gérant de station COCO</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Station service</td><td>Chef de piste / pompiste de station CODO / DODO</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Travaux en espace confiné</td><td>Intervenant en espace confiné</td><td>Personnel intervenant en espace confiné</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Travaux en hauteur</td><td>Intervenant travaux en hauteur</td><td>Personnel travaillant en hauteur</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Travaux en hauteur</td><td>Monteur / Démonteur échafaudage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td></tr>
+<tr><td>Travaux en hauteur</td><td>Vérificateur échafaudage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td></tr>
 <tr><td>Transport</td><td>Chauffeur poids lourds</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Transport</td><td>Chauffeur véhicule léger</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux à chaud</td><td>Soudeur</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux de fouille</td><td>Superviseur travaux d'excavation</td><td>Coordonne, contrôle et sécurise les opérations de terrassement sur chantier. Assiste en cas de non-visibilité ou de présence de personnel dans la fouille</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux de fouille</td><td>Conducteur d'engin d'excavation</td><td>Manuvre des machines de chantier pour creuser, déplacer et modeler les terrains</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en espace confiné</td><td>Opérateur de stratification</td><td>Réalise des opérations de stratification, de renforcement ou de réparations de cuves</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en espace confiné</td><td>Surveillant espace confiné</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en hauteur</td><td>Conducteur / opérateur PEMP</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en hauteur</td><td>Monteur / démonteur échafaudage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en hauteur</td><td>Vérificateur échafaudage</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td></tr>
-<tr><td>Travaux sur systèmes alimentés en énergie</td><td>Opérateur consignation mécanique</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en espace confiné</td><td>Intervenant en espace confiné</td><td>Personnel intervenant en espace confiné ou effectuant des actions liées aux travaux de cette nature</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux en hauteur</td><td>Intervenant travaux en hauteur</td><td>Personnel travaillant en hauteur ou à proximité de zones comprenant des travaux en hauteur</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux de fouille</td><td>Intervenant travaux de fouille</td><td>Personnel travaillant dans une fouille ou à proximité</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux à chaud</td><td>Intervenant travaux à chaud</td><td>Personnel travaillant à chaud et / ou en zone ATEX</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux sur système alimentés en énergie électrique</td><td>Intervenant sur ou à proximité de systèmes électriques</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux sur système alimentés en énergie mécanique</td><td>Intervenant sur ou à proximité de systèmes alimentés en énergies autres qu'électrique</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Travaux de levage</td><td>Intervenant travaux de levage</td><td>Competent person for lifting operation (CPLO 1 ou 2)</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td style="background:#B7E1CD;color:#1a6b4a;font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+</table>
   </div>
 </div>
 
@@ -253,7 +196,7 @@
     <div class="kpi-grid">
       <div class="kpi-card"><div class="kpi-label" data-fr="Profils concernés" data-en="Profiles affected">Profils concernés</div><div class="kpi-value">17</div></div>
       <div class="kpi-card"><div class="kpi-label" data-fr="Utilisateurs impactés" data-en="Impacted workers">Utilisateurs impactés</div><div class="kpi-value">1 481</div></div>
-      <div class="kpi-card"><div class="kpi-label" data-fr="Profil le plus critique" data-en="Most critical profile">Profil le plus critique</div><div class="kpi-value" style="font-size:14px">Technicien-manœuvre</div><div class="kpi-sub">943 utilisateurs</div></div>
+      <div class="kpi-card"><div class="kpi-label" data-fr="Profil le plus critique" data-en="Most critical profile">Profil le plus critique</div><div class="kpi-value" style="font-size:14px">Technicien-manoeuvre</div><div class="kpi-sub">943 utilisateurs</div></div>
       <div class="kpi-card"><div class="kpi-label" data-fr="Max entreprises / profil" data-en="Max contractors / profile">Max entreprises / profil</div><div class="kpi-value">37</div></div>
     </div>
     <div class="filter-row">
@@ -281,347 +224,355 @@
     <div class="filter-row">
       <input type="text" id="searchDetail" placeholder="Rechercher un profil…" oninput="filterDetail(this.value)">
       <select id="sortDetail" onchange="renderDetail()">
-        <option value="nonconf" data-fr="Plus impactés d'abord" data-en="Most impacted first">Plus impactés d'abord</option>
-        <option value="pct_asc" data-fr="Conformité croissante" data-en="Compliance rate ↑">Conformité croissante</option>
-        <option value="pct_desc" data-fr="Conformité décroissante" data-en="Compliance rate ↓">Conformité décroissante</option>
-        <option value="alpha" data-fr="Alphabétique" data-en="Alphabetical">Alphabétique</option>
+        <option value="nonconf">Plus impactés d'abord</option>
+        <option value="pct_asc">Conformité croissante</option>
+        <option value="pct_desc">Conformité décroissante</option>
+        <option value="alpha">Alphabétique</option>
       </select>
       <span class="results-count" id="detailCount"></span>
     </div>
     <table class="impact-table" id="detailTable">
-      <thead>
-        <tr>
-          <th data-fr="Profil actuel" data-en="Current profile (site)">Profil actuel</th>
-          <th data-fr="Profil harmonisé HQ" data-en="HQ Harmonised profile">Profil harmonisé HQ</th>
-          <th data-fr="Nature des travaux" data-en="Work Category">Nature des travaux</th>
-          <th class="center" data-fr="Conformes" data-en="Compliant">Conformes</th>
-          <th class="center" data-fr="Non conformes" data-en="Non-compliant">Non conformes</th>
-          <th class="center" data-fr="% Conformité" data-en="Compliance rate">% Conformité</th>
-          <th data-fr="E-learnings à ajouter" data-en="E-learnings to assign">E-learnings à ajouter</th>
-          <th data-fr="E-learnings à supprimer" data-en="E-learnings to withdraw">E-learnings à supprimer</th>
-          <th data-fr="Documents à ajouter" data-en="Documents to assign">Documents à ajouter</th>
-          <th data-fr="Documents à supprimer" data-en="Documents to withdraw">Documents à supprimer</th>
-          <th class="center" data-fr="Statut" data-en="Status">Statut</th>
-        </tr>
-      </thead>
+      <thead><tr>
+        <th data-fr="Profil actuel" data-en="Current profile (site)">Profil actuel</th>
+        <th data-fr="Profil harmonisé HQ" data-en="HQ Harmonised profile">Profil harmonisé HQ</th>
+        <th data-fr="Nature des travaux" data-en="Work Category">Nature des travaux</th>
+        <th class="center" data-fr="Conformes" data-en="Compliant">Conformes</th>
+        <th class="center" data-fr="Non conformes" data-en="Non-compliant">Non conformes</th>
+        <th class="center" data-fr="% Conformité" data-en="Compliance rate">% Conformité</th>
+        <th data-fr="E-learnings à ajouter" data-en="E-learnings to assign">E-learnings à ajouter</th>
+        <th data-fr="E-learnings à supprimer" data-en="E-learnings to withdraw">E-learnings à supprimer</th>
+        <th data-fr="Documents à ajouter" data-en="Documents to assign">Documents à ajouter</th>
+        <th data-fr="Documents à supprimer" data-en="Documents to withdraw">Documents à supprimer</th>
+        <th class="center" data-fr="Statut" data-en="Status">Statut</th>
+      </tr></thead>
       <tbody id="detailTbody"></tbody>
     </table>
   </div>
 </div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────
-const companyData = [
+var companyData = [
   { e: "TotalEnergies Cameroun", n: 221, p: ["chef de site"] },
-  { e: "KALFRELEC", n: 161, p: ["chauffeur pl","chauffeur vl","chef de chantier","chef de site","intervenant en hauteur","intervenant sur installation solaire","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "FRIEDLANDER", n: 146, p: ["chef de chantier","chef de manœuvre","conducteur engin de chantier","conducteur nacelle élévatrice","grutier","intervenant en espace confiné","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "ALUVAL DESIGN", n: 126, p: ["chauffeur pl","chef de chantier","chef de manœuvre","grutier","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "BATI PLUS SARL", n: 114, p: ["chauffeur vl","chef de chantier","chef de manœuvre","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "GEMAT", n: 104, p: ["chauffeur vl","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "ASSAKO Sarl", n: 43, p: ["monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "SOCATAM Cameroon", n: 41, p: ["chauffeur vl","intervenant en espace confiné","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "MAXFA", n: 38, p: ["chef de chantier","monteur échafaudage","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "INSTRUMELEC", n: 36, p: ["chef de chantier","intervenant sur installation solaire","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "SPARK 237", n: 31, p: ["chef de chantier","chef de manœuvre","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "STE ARNO", n: 26, p: ["chauffeur vl","chef de chantier","chef de manœuvre","grutier","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "BOCAM", n: 26, p: ["chauffeur vl","chef de chantier","intervenant en espace confiné","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "COMETAL", n: 26, p: ["chef de chantier","conducteur engin de chantier","grutier","intervenant en espace confiné","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "CEB LA MEUBLERIE", n: 25, p: ["chauffeur pl","chef de chantier","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "SIMTECH 3D", n: 24, p: ["chef de chantier","grutier","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "GRAPHICS SYSTEM", n: 24, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "CERCOMIT", n: 24, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "OMNIUM SERVICE", n: 23, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","responsable HSE chantier","vérificateur échafaudage"] },
-  { e: "SAE", n: 22, p: ["chauffeur pl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "Bureau Veritas Cameroun", n: 20, p: ["intervenant en espace confiné","responsable HSE chantier"] },
-  { e: "SAMIN", n: 20, p: ["chef de chantier","intervenant en espace confiné","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "BCOG Cameroun", n: 20, p: ["chauffeur pl","chef de chantier","intervenant en espace confiné","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "SECA", n: 18, p: ["chauffeur pl","chef de chantier","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "G4S", n: 18, p: ["monteur échafaudage","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "GRAPHICS CORPORATION", n: 18, p: ["chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "PICTET CAMEROUN", n: 17, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "SATED SARL", n: 16, p: ["chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manœuvre","vérificateur échafaudage"] },
-  { e: "ITS SARL", n: 9, p: ["chef de chantier","intervenant en espace confiné","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "CFAO TECHNOLOGIES Cameroun", n: 9, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "UBC TECH", n: 8, p: ["chef de chantier","chef de manœuvre","grutier","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "BTC", n: 7, p: ["chef de chantier","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "CAMINSER", n: 6, p: ["responsable HSE chantier","technicien-manœuvre"] },
-  { e: "NELIS", n: 5, p: ["grutier","responsable HSE chantier","technicien-manœuvre"] },
-  { e: "AREC SARL", n: 3, p: ["responsable HSE chantier","technicien-manœuvre"] },
+  { e: "KALFRELEC", n: 161, p: ["chauffeur pl","chauffeur vl","chef de chantier","chef de site","intervenant en hauteur","intervenant sur installation solaire","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "FRIEDLANDER", n: 146, p: ["chef de chantier","chef de manoeuvre","conducteur engin de chantier","conducteur nacelle elevatrice","grutier","intervenant en espace confine","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "ALUVAL DESIGN", n: 126, p: ["chauffeur pl","chef de chantier","chef de manoeuvre","grutier","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "BATI PLUS SARL", n: 114, p: ["chauffeur vl","chef de chantier","chef de manoeuvre","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "GEMAT", n: 104, p: ["chauffeur vl","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "ASSAKO Sarl", n: 43, p: ["monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "SOCATAM Cameroon", n: 41, p: ["chauffeur vl","intervenant en espace confine","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "MAXFA", n: 38, p: ["chef de chantier","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "INSTRUMELEC", n: 36, p: ["chef de chantier","intervenant sur installation solaire","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "SPARK 237", n: 31, p: ["chef de chantier","chef de manoeuvre","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "STE ARNO", n: 26, p: ["chauffeur vl","chef de chantier","chef de manoeuvre","grutier","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "BOCAM", n: 26, p: ["chauffeur vl","chef de chantier","intervenant en espace confine","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "COMETAL", n: 26, p: ["chef de chantier","conducteur engin de chantier","grutier","intervenant en espace confine","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "CEB LA MEUBLERIE", n: 25, p: ["chauffeur pl","chef de chantier","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "SIMTECH 3D", n: 24, p: ["chef de chantier","grutier","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "GRAPHICS SYSTEM", n: 24, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "CERCOMIT", n: 24, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "OMNIUM SERVICE", n: 23, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","responsable HSE chantier","verificateur echafaudage"] },
+  { e: "SAE", n: 22, p: ["chauffeur pl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "Bureau Veritas Cameroun", n: 20, p: ["intervenant en espace confine","responsable HSE chantier"] },
+  { e: "SAMIN", n: 20, p: ["chef de chantier","intervenant en espace confine","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "BCOG Cameroun", n: 20, p: ["chauffeur pl","chef de chantier","intervenant en espace confine","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "SECA", n: 18, p: ["chauffeur pl","chef de chantier","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "G4S", n: 18, p: ["monteur echafaudage","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "GRAPHICS CORPORATION", n: 18, p: ["chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "PICTET CAMEROUN", n: 17, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "SATED SARL", n: 16, p: ["chef de chantier","intervenant en hauteur","responsable HSE chantier","technicien-manoeuvre","verificateur echafaudage"] },
+  { e: "ITS SARL", n: 9, p: ["chef de chantier","intervenant en espace confine","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "CFAO TECHNOLOGIES Cameroun", n: 9, p: ["chauffeur vl","chef de chantier","intervenant en hauteur","intervenant sur installation solaire","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "UBC TECH", n: 8, p: ["chef de chantier","chef de manoeuvre","grutier","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "BTC", n: 7, p: ["chef de chantier","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "CAMINSER", n: 6, p: ["responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "NELIS", n: 5, p: ["grutier","responsable HSE chantier","technicien-manoeuvre"] },
+  { e: "AREC SARL", n: 3, p: ["responsable HSE chantier","technicien-manoeuvre"] },
   { e: "APAVE Cameroun", n: 2, p: ["responsable HSE chantier"] },
   { e: "BUREAU VERITAS.", n: 1, p: ["responsable HSE chantier"] },
   { e: "My Company", n: 1, p: ["conducteur engin de chantier"] },
   { e: "TotalEnergies", n: 1, p: ["responsable HSE chantier"] },
-  { e: "TotalEnergies Tanzania", n: 1, p: ["chef de site"] },
+  { e: "TotalEnergies Tanzania", n: 1, p: ["chef de site"] }
 ];
 
-const profileData = [
-  { profil: "Technicien-manœuvre", hq: "Chef de manœuvre levage", conforme: 736, nonconf: 207, pct: 78, ent: 32, add_el: [], add_doc: [], rm_el: ["Travaux en espace confiné","Travaux à chaud","Travaux de fouille","Consignation","Travaux en hauteur"], rm_doc: ["Déclaration d'aptitude médicale"] },
-  { profil: "Chef de site", hq: "Superviseur TE", conforme: 4, nonconf: 219, pct: 2, ent: 3, add_el: ["Consignation mécanique"], add_doc: [], rm_el: [], rm_doc: ["Gestion des travaux"] },
-  { profil: "Responsable HSE chantier", hq: "Responsable de production", conforme: 115, nonconf: 67, pct: 63, ent: 37, add_el: ["Consignation mécanique"], add_doc: [], rm_el: ["Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
-  { profil: "Intervenant en hauteur", hq: "Intervenant travaux en hauteur", conforme: 154, nonconf: 95, pct: 62, ent: 20, add_el: [], add_doc: ["Habilitation travaux en hauteur"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation"], rm_doc: [] },
-  { profil: "Chef de chantier", hq: "Chef de manœuvre levage", conforme: 92, nonconf: 51, pct: 64, ent: 26, add_el: [], add_doc: [], rm_el: ["Travaux en espace confiné","Travaux à chaud","Travaux de fouille","Consignation","Travaux en hauteur","Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
-  { profil: "Électricien", hq: "Électricien", conforme: 108, nonconf: 79, pct: 58, ent: 8, add_el: [], add_doc: ["Habilitation électrique"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation"], rm_doc: [] },
-  { profil: "Monteur échafaudage", hq: "Monteur/Démonteur échafaudage", conforme: 48, nonconf: 61, pct: 44, ent: 12, add_el: [], add_doc: ["Habilitation monteur/démonteur"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Travaux en hauteur"], rm_doc: ["Habilitation montage échafaudage"] },
-  { profil: "Intervenant en espace confiné", hq: "Intervenant en espace confiné", conforme: 39, nonconf: 28, pct: 58, ent: 8, add_el: [], add_doc: [], rm_el: ["Travaux à chaud","Opérations de levage","Consignation","Travaux en hauteur","Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
-  { profil: "Vérificateur échafaudage", hq: "Vérificateur échafaudage", conforme: 39, nonconf: 43, pct: 48, ent: 13, add_el: [], add_doc: ["Habilitation vérificateur échafaudage"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage"], rm_doc: [] },
-  { profil: "Chauffeur vl", hq: "Chauffeur véhicule léger", conforme: 40, nonconf: 19, pct: 68, ent: 11, add_el: [], add_doc: [], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation","Travaux en hauteur"], rm_doc: [] },
-  { profil: "Grutier", hq: "Grutier", conforme: 4, nonconf: 10, pct: 29, ent: 7, add_el: [], add_doc: ["CACES ou équivalent grue"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Habilitation conduite grue"] },
-  { profil: "Chauffeur pl", hq: "Chauffeur poids lourds", conforme: 11, nonconf: 7, pct: 61, ent: 6, add_el: ["Gestion des travaux"], add_doc: [], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation","Travaux en hauteur"], rm_doc: [] },
-  { profil: "Élingueur", hq: "Élingueur", conforme: 5, nonconf: 8, pct: 38, ent: 4, add_el: [], add_doc: ["Formation spécialisée élingueur"], rm_el: ["Opérations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Habilitation élingueur"] },
-  { profil: "Chef de manœuvre", hq: "Conducteur d'engin d'excavation", conforme: 4, nonconf: 12, pct: 25, ent: 6, add_el: [], add_doc: ["Habilitation engin de chantier"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation","Gestion des travaux"], rm_doc: ["Habilitation manœuvre et manutention"] },
-  { profil: "Intervenant sur installation solaire", hq: "Intervenant sur panneaux solaires", conforme: 23, nonconf: 11, pct: 68, ent: 5, add_el: [], add_doc: ["Habilitation électrique"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Formation HSE solarisation"] },
-  { profil: "Conducteur engin de chantier", hq: "Conducteur d'engin d'excavation", conforme: 2, nonconf: 2, pct: 50, ent: 3, add_el: [], add_doc: ["Habilitation engin de chantier"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Consignation"], rm_doc: ["Permis de conduire G"] },
-  { profil: "Conducteur nacelle élévatrice", hq: "Conducteur/opérateur PEMP", conforme: 0, nonconf: 0, pct: 0, ent: 1, add_el: [], add_doc: ["Habilitation PEMP"], rm_el: ["Travaux en espace confiné","Travaux à chaud","Opérations de levage","Travaux en hauteur"], rm_doc: ["Habilitation conduite PEMP"] },
+var profileData = [
+  { profil: "Technicien-manoeuvre", hq: "Chef de manoeuvre levage", conforme: 736, nonconf: 207, pct: 78, ent: 32, add_el: [], add_doc: [], rm_el: ["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Consignation","Travaux en hauteur"], rm_doc: ["Declaration aptitude medicale"] },
+  { profil: "Chef de site", hq: "Superviseur TE", conforme: 4, nonconf: 219, pct: 2, ent: 3, add_el: ["Consignation mecanique"], add_doc: [], rm_el: [], rm_doc: ["Gestion des travaux"] },
+  { profil: "Responsable HSE chantier", hq: "Responsable de production", conforme: 115, nonconf: 67, pct: 63, ent: 37, add_el: ["Consignation mecanique"], add_doc: [], rm_el: ["Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
+  { profil: "Intervenant en hauteur", hq: "Intervenant travaux en hauteur", conforme: 154, nonconf: 95, pct: 62, ent: 20, add_el: [], add_doc: ["Habilitation travaux en hauteur"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation"], rm_doc: [] },
+  { profil: "Chef de chantier", hq: "Chef de manoeuvre levage", conforme: 92, nonconf: 51, pct: 64, ent: 26, add_el: [], add_doc: [], rm_el: ["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Consignation","Travaux en hauteur","Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
+  { profil: "Electricien", hq: "Electricien", conforme: 108, nonconf: 79, pct: 58, ent: 8, add_el: [], add_doc: ["Habilitation electrique"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation"], rm_doc: [] },
+  { profil: "Monteur echafaudage", hq: "Monteur/Demonteur echafaudage", conforme: 48, nonconf: 61, pct: 44, ent: 12, add_el: [], add_doc: ["Habilitation monteur/demonteur"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Travaux en hauteur"], rm_doc: ["Habilitation montage echafaudage"] },
+  { profil: "Intervenant en espace confine", hq: "Intervenant en espace confine", conforme: 39, nonconf: 28, pct: 58, ent: 8, add_el: [], add_doc: [], rm_el: ["Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur","Gestion des travaux"], rm_doc: ["Gestion des travaux"] },
+  { profil: "Verificateur echafaudage", hq: "Verificateur echafaudage", conforme: 39, nonconf: 43, pct: 48, ent: 13, add_el: [], add_doc: ["Habilitation verificateur echafaudage"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage"], rm_doc: [] },
+  { profil: "Chauffeur vl", hq: "Chauffeur vehicule leger", conforme: 40, nonconf: 19, pct: 68, ent: 11, add_el: [], add_doc: [], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur"], rm_doc: [] },
+  { profil: "Grutier", hq: "Grutier", conforme: 4, nonconf: 10, pct: 29, ent: 7, add_el: [], add_doc: ["CACES ou equivalent grue"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Habilitation conduite grue"] },
+  { profil: "Chauffeur pl", hq: "Chauffeur poids lourds", conforme: 11, nonconf: 7, pct: 61, ent: 6, add_el: ["Gestion des travaux"], add_doc: [], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur"], rm_doc: [] },
+  { profil: "Elingueur", hq: "Elingueur", conforme: 5, nonconf: 8, pct: 38, ent: 4, add_el: [], add_doc: ["Formation specialisee elingueur"], rm_el: ["Operations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Habilitation elingueur"] },
+  { profil: "Chef de manoeuvre", hq: "Conducteur engin excavation", conforme: 4, nonconf: 12, pct: 25, ent: 6, add_el: [], add_doc: ["Habilitation engin de chantier"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Gestion des travaux"], rm_doc: ["Habilitation manoeuvre et manutention"] },
+  { profil: "Intervenant sur installation solaire", hq: "Intervenant sur panneaux solaires", conforme: 23, nonconf: 11, pct: 68, ent: 5, add_el: [], add_doc: ["Habilitation electrique"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur"], rm_doc: ["Formation HSE solarisation"] },
+  { profil: "Conducteur engin de chantier", hq: "Conducteur engin excavation", conforme: 2, nonconf: 2, pct: 50, ent: 3, add_el: [], add_doc: ["Habilitation engin de chantier"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation"], rm_doc: ["Permis de conduire G"] },
+  { profil: "Conducteur nacelle elevatrice", hq: "Conducteur/operateur PEMP", conforme: 0, nonconf: 0, pct: 0, ent: 1, add_el: [], add_doc: ["Habilitation PEMP"], rm_el: ["Travaux en espace confine","Travaux a chaud","Operations de levage","Travaux en hauteur"], rm_doc: ["Habilitation conduite PEMP"] }
 ];
 
-const detailData = [{"profil": "Chauffeur pl", "hq": "chauffeur poids lourds", "nature": "Transport", "el_add": ["gestion des travaux"], "el_rm": ["travaux en espace confiné", "travaux à chaud", "opérations de levage", "consignation", "travaux en hauteur", "permis poid lourd"], "doc_add": [], "doc_rm": [], "statut": "Prêt", "conforme": 11, "nonconf": 7, "pct": 61}, {"profil": "Chauffeur vl", "hq": "Chauffeur véhicule léger", "nature": "Transport", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "opérations de levage", "consignation", "travaux en hauteur"], "doc_add": [], "doc_rm": [], "statut": "Prêt", "conforme": 40, "nonconf": 19, "pct": 68}, {"profil": "Chef de chantier", "hq": "chef de manœuvre levage", "nature": "Levage et manutention", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "consignation", "travaux en hauteur", "gestion des travaux"], "doc_add": [], "doc_rm": ["gestion des travaux"], "statut": "Prêt", "conforme": 92, "nonconf": 51, "pct": 64}, {"profil": "Chef de manœuvre", "hq": "Conducteur d'engin d'excavation", "nature": "Travaux de fouille", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation", "gestion des travaux"], "doc_add": ["habilitation engin de chantier"], "doc_rm": ["gestion des travaux", "habilitation manoeuvre et manutention"], "statut": "Prêt", "conforme": 4, "nonconf": 12, "pct": 25}, {"profil": "Chef de site", "hq": "Superviseur TE", "nature": "Contrôle - Supervision", "el_add": ["consignation mécanique"], "el_rm": [], "doc_add": [], "doc_rm": ["gestion des travaux"], "statut": "Prêt", "conforme": 4, "nonconf": 219, "pct": 2}, {"profil": "Conducteur d'engin de chantier", "hq": "Conducteur d'engin d'excavation", "nature": "Travaux de fouille", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation"], "doc_add": ["habilitation engin de chantier"], "doc_rm": ["permis de conduire g"], "statut": "Prêt", "conforme": 2, "nonconf": 2, "pct": 50}, {"profil": "Conducteur de nacelle élévatrice", "hq": "Conducteur/opérateur PEMP", "nature": "Travaux en hauteur", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "travaux en hauteur"], "doc_add": ["habilitation pemp"], "doc_rm": ["habilitation conduite pemp"], "statut": "Prêt", "conforme": 0, "nonconf": 0, "pct": 0}, {"profil": "Électricien", "hq": "Électricien", "nature": "Travaux sur système alimentés en énergie électrique", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation"], "doc_add": ["habilitation électrique"], "doc_rm": [], "statut": "Prêt", "conforme": 108, "nonconf": 79, "pct": 58}, {"profil": "Élingueur", "hq": "élingueur", "nature": "Levage et manutention", "el_add": [], "el_rm": ["travaux de fouille et d'excavation", "opérations de levage", "consignation", "travaux en hauteur"], "doc_add": ["formation spécialisée elingueur"], "doc_rm": ["habilitation élingueur"], "statut": "Prêt", "conforme": 5, "nonconf": 8, "pct": 38}, {"profil": "Grutier", "hq": "Grutier", "nature": "Levage et manutention", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation", "travaux en hauteur"], "doc_add": ["caces ou équivalent grue"], "doc_rm": ["habilitation conduite grue"], "statut": "Prêt", "conforme": 4, "nonconf": 10, "pct": 29}, {"profil": "Intervenant en espace confiné", "hq": "intervenant en espace confiné", "nature": "Travaux en espace confiné", "el_add": [], "el_rm": ["travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation", "travaux en hauteur", "gestion des travaux"], "doc_add": [], "doc_rm": ["gestion des travaux"], "statut": "Prêt", "conforme": 39, "nonconf": 28, "pct": 58}, {"profil": "Intervenant en hauteur", "hq": "intervenant travaux en hauteur", "nature": "Travaux en hauteur", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation"], "doc_add": [], "doc_rm": [], "statut": "Prêt", "conforme": 154, "nonconf": 95, "pct": 62}, {"profil": "Intervenant sur installation solaire", "hq": "Intervenant sur panneaux solaires", "nature": "Travaux sur système alimentés en énergie électrique", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "consignation", "travaux en hauteur"], "doc_add": ["habilitation électrique"], "doc_rm": ["formation hse solarisation"], "statut": "Prêt", "conforme": 23, "nonconf": 11, "pct": 68}, {"profil": "Monteur / Démonteur échafaudage", "hq": "monteur/démonteur échafaudage", "nature": "Travaux en hauteur", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage", "travaux en hauteur"], "doc_add": ["habilitation monteur/ démonteur échafaudage"], "doc_rm": ["habilitation montage echafaudage"], "statut": "Prêt", "conforme": 48, "nonconf": 61, "pct": 44}, {"profil": "Responsable HSE chantier", "hq": "responsable de production", "nature": "Production / Usine", "el_add": ["consignation mécanique"], "el_rm": ["gestion des travaux"], "doc_add": [], "doc_rm": ["gestion des travaux"], "statut": "Prêt", "conforme": 115, "nonconf": 67, "pct": 63}, {"profil": "Technicien-manœuvre", "hq": "chef de manœuvre levage", "nature": "Levage et manutention", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "consignation", "travaux en hauteur"], "doc_add": [], "doc_rm": [], "statut": "Prêt", "conforme": 736, "nonconf": 207, "pct": 78}, {"profil": "Vérificateur échafaudage", "hq": "vérificateur échafaudage", "nature": "Travaux en hauteur", "el_add": [], "el_rm": ["travaux en espace confiné", "travaux à chaud", "travaux de fouille et d'excavation", "opérations de levage"], "doc_add": [], "doc_rm": [], "statut": "Prêt", "conforme": 39, "nonconf": 43, "pct": 48}];
+var detailData = [
+  {profil:"Chauffeur pl",hq:"Chauffeur poids lourds",nature:"Transport",el_add:["Gestion des travaux"],el_rm:["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur","Permis poids lourd"],doc_add:[],doc_rm:[],statut:"Pret",conforme:11,nonconf:7,pct:61},
+  {profil:"Chauffeur vl",hq:"Chauffeur vehicule leger",nature:"Transport",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Operations de levage","Consignation","Travaux en hauteur"],doc_add:[],doc_rm:[],statut:"Pret",conforme:40,nonconf:19,pct:68},
+  {profil:"Chef de chantier",hq:"Chef de manoeuvre levage",nature:"Levage et manutention",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Consignation","Travaux en hauteur","Gestion des travaux"],doc_add:[],doc_rm:["Gestion des travaux"],statut:"Pret",conforme:92,nonconf:51,pct:64},
+  {profil:"Chef de manoeuvre",hq:"Conducteur engin excavation",nature:"Travaux de fouille",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation","Gestion des travaux"],doc_add:["Habilitation engin de chantier"],doc_rm:["Gestion des travaux","Habilitation manoeuvre et manutention"],statut:"Pret",conforme:4,nonconf:12,pct:25},
+  {profil:"Chef de site",hq:"Superviseur TE",nature:"Controle - Supervision",el_add:["Consignation mecanique"],el_rm:[],doc_add:[],doc_rm:["Gestion des travaux"],statut:"Pret",conforme:4,nonconf:219,pct:2},
+  {profil:"Conducteur engin de chantier",hq:"Conducteur engin excavation",nature:"Travaux de fouille",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation"],doc_add:["Habilitation engin de chantier"],doc_rm:["Permis de conduire G"],statut:"Pret",conforme:2,nonconf:2,pct:50},
+  {profil:"Conducteur nacelle elevatrice",hq:"Conducteur/operateur PEMP",nature:"Travaux en hauteur",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Travaux en hauteur"],doc_add:["Habilitation PEMP"],doc_rm:["Habilitation conduite PEMP"],statut:"Pret",conforme:0,nonconf:0,pct:0},
+  {profil:"Electricien",hq:"Electricien",nature:"Travaux sur systeme electrique",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation"],doc_add:["Habilitation electrique"],doc_rm:[],statut:"Pret",conforme:108,nonconf:79,pct:58},
+  {profil:"Elingueur",hq:"Elingueur",nature:"Levage et manutention",el_add:[],el_rm:["Travaux de fouille","Operations de levage","Consignation","Travaux en hauteur"],doc_add:["Formation specialisee elingueur"],doc_rm:["Habilitation elingueur"],statut:"Pret",conforme:5,nonconf:8,pct:38},
+  {profil:"Grutier",hq:"Grutier",nature:"Levage et manutention",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation","Travaux en hauteur"],doc_add:["CACES ou equivalent grue"],doc_rm:["Habilitation conduite grue"],statut:"Pret",conforme:4,nonconf:10,pct:29},
+  {profil:"Intervenant en espace confine",hq:"Intervenant en espace confine",nature:"Travaux en espace confine",el_add:[],el_rm:["Travaux a chaud","Travaux de fouille","Operations de levage","Consignation","Travaux en hauteur","Gestion des travaux"],doc_add:[],doc_rm:["Gestion des travaux"],statut:"Pret",conforme:39,nonconf:28,pct:58},
+  {profil:"Intervenant en hauteur",hq:"Intervenant travaux en hauteur",nature:"Travaux en hauteur",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation"],doc_add:[],doc_rm:[],statut:"Pret",conforme:154,nonconf:95,pct:62},
+  {profil:"Intervenant sur installation solaire",hq:"Intervenant sur panneaux solaires",nature:"Travaux sur systeme electrique",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Consignation","Travaux en hauteur"],doc_add:["Habilitation electrique"],doc_rm:["Formation HSE solarisation"],statut:"Pret",conforme:23,nonconf:11,pct:68},
+  {profil:"Monteur echafaudage",hq:"Monteur/Demonteur echafaudage",nature:"Travaux en hauteur",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage","Travaux en hauteur"],doc_add:["Habilitation monteur/demonteur echafaudage"],doc_rm:["Habilitation montage echafaudage"],statut:"Pret",conforme:48,nonconf:61,pct:44},
+  {profil:"Responsable HSE chantier",hq:"Responsable de production",nature:"Production / Usine",el_add:["Consignation mecanique"],el_rm:["Gestion des travaux"],doc_add:[],doc_rm:["Gestion des travaux"],statut:"Pret",conforme:115,nonconf:67,pct:63},
+  {profil:"Technicien-manoeuvre",hq:"Chef de manoeuvre levage",nature:"Levage et manutention",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Consignation","Travaux en hauteur"],doc_add:[],doc_rm:[],statut:"Pret",conforme:736,nonconf:207,pct:78},
+  {profil:"Verificateur echafaudage",hq:"Verificateur echafaudage",nature:"Travaux en hauteur",el_add:[],el_rm:["Travaux en espace confine","Travaux a chaud","Travaux de fouille","Operations de levage"],doc_add:[],doc_rm:[],statut:"Pret",conforme:39,nonconf:43,pct:48}
+];
 
-const maxUsers = Math.max(...companyData.map(d => d.n));
-let lang = 'fr';
+var maxUsers = Math.max.apply(null, companyData.map(function(d) { return d.n; }));
+var lang = 'fr';
 
-// ── LANG ──
 function setLang(l) {
   lang = l;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
-  document.querySelectorAll('[data-fr]').forEach(el => { el.textContent = el.getAttribute('data-' + l) || el.textContent; });
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.toggle('active', b.textContent === l.toUpperCase()); });
+  document.querySelectorAll('[data-fr]').forEach(function(el) { el.textContent = el.getAttribute('data-' + l) || el.textContent; });
   renderCompany(); renderProfile(); renderDetail(); updateMatrixCount();
+
+// Tooltip sur les cellules tronquées de la matrice (onglet 1)
+document.querySelectorAll('#mainTable td').forEach(function(cell) {
+  var text = cell.innerText.trim();
+  if (!text || text === 'X') return;
+  cell.setAttribute('title', text);
+});
 }
 
-// ── TABS ──
 function switchTab(id) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('panel-' + id).classList.add('active');
   event.currentTarget.classList.add('active');
 }
 
-// ── MATRIX ──
 function filterMatrix(q) {
-  const rows = document.querySelectorAll('#mainTable tr');
-  let v = 0;
-  rows.forEach((row, i) => {
-    if (i < 3) return;
-    const show = !q || row.textContent.toLowerCase().includes(q.toLowerCase());
+  var rows = document.querySelectorAll('#mainTable tr');
+  var v = 0;
+  rows.forEach(function(row, i) {
+    if (i < 2) return;
+    var show = !q || row.textContent.toLowerCase().includes(q.toLowerCase());
     row.style.display = show ? '' : 'none';
     if (show) v++;
   });
-  document.getElementById('matrixCount').textContent = v + (lang === 'fr' ? ' profils' : ' profiles') + (q ? (lang==='fr' ? ' trouvés' : ' found') : '');
+  document.getElementById('matrixCount').textContent = v + (lang === 'fr' ? ' profils' : ' profiles') + (q ? (lang === 'fr' ? ' trouvés' : ' found') : '');
 }
+
 function updateMatrixCount() {
-  const rows = document.querySelectorAll('#mainTable tr');
-  let v = 0;
-  rows.forEach((r, i) => { if (i >= 3 && r.style.display !== 'none') v++; });
+  var rows = document.querySelectorAll('#mainTable tr');
+  var v = 0;
+  rows.forEach(function(r, i) { if (i >= 2 && r.style.display !== 'none') v++; });
   document.getElementById('matrixCount').textContent = v + (lang === 'fr' ? ' profils' : ' profiles');
 }
 
-// ── TRANSLATION MAP ──
-const T = {
-  fr: {
-    noChange: 'Aucun changement', ready: 'Prêt',
-    companies: ' entreprises', profiles: ' profils', found: ' trouvés',
-    high: 'Fort', medium: 'Moyen', low: 'Faible',
-    nature: {
-      'Transport': 'Transport',
-      'Levage et manutention': 'Levage et manutention',
-      'Travaux de fouille': 'Travaux de fouille',
-      'Contrôle - Supervision': 'Contrôle - Supervision',
-      'Travaux en hauteur': 'Travaux en hauteur',
-      'Travaux sur système alimentés en énergie électrique': 'Travaux sur système alimentés en énergie électrique',
-      'Travaux en espace confiné': 'Travaux en espace confiné',
-      'Production / Usine': 'Production / Usine',
-      'Lutte contre incendie': 'Lutte contre incendie',
-    },
-    el: {
-      'gestion des travaux': 'gestion des travaux',
-      'travaux en espace confiné': 'travaux en espace confiné',
-      'travaux à chaud': 'travaux à chaud',
-      'opérations de levage': 'opérations de levage',
-      'consignation': 'consignation',
-      'consignation mécanique': 'consignation mécanique',
-      'travaux en hauteur': 'travaux en hauteur',
-      'travaux de fouille et d\'excavation': 'travaux de fouille et d\'excavation',
-      'permis poid lourd': 'permis poids lourds',
-    },
-    doc: {
-      'habilitation engin de chantier': 'habilitation engin de chantier',
-      'gestion des travaux': 'gestion des travaux',
-      'habilitation manoeuvre et manutention': 'habilitation manœuvre et manutention',
-      'habilitation électrique': 'habilitation électrique',
-      'habilitation pemp': 'habilitation PEMP',
-      'habilitation conduite pemp': 'habilitation conduite PEMP',
-      'habilitation travaux en hauteur': 'habilitation travaux en hauteur',
-      'habilitation monteur/ démonteur échafaudage': 'habilitation monteur/démonteur échafaudage',
-      'habilitation montage echafaudage': 'habilitation montage échafaudage',
-      'habilitation vérificateur échafaudage': 'habilitation vérificateur échafaudage',
-      'caces ou équivalent grue': 'CACES ou équivalent grue',
-      'habilitation conduite grue': 'habilitation conduite grue',
-      'formation spécialisée elingueur': 'formation spécialisée élingueur',
-      'habilitation élingueur': 'habilitation élingueur',
-      'formation hse solarisation': 'formation HSE solarisation',
-      'permis de conduire g': 'permis de conduire G',
-    },
-    profil: {
-      'Chauffeur pl': 'Chauffeur pl', 'Chauffeur vl': 'Chauffeur vl',
-      'Chef de chantier': 'Chef de chantier', 'Chef de manœuvre': 'Chef de manœuvre',
-      'Chef de site': 'Chef de site', 'Conducteur d\'engin de chantier': 'Conducteur d\'engin de chantier',
-      'Conducteur de nacelle élévatrice': 'Conducteur de nacelle élévatrice',
-      'Électricien': 'Électricien', 'Élingueur': 'Élingueur', 'Grutier': 'Grutier',
-      'Intervenant en espace confiné': 'Intervenant en espace confiné',
-      'Intervenant en hauteur': 'Intervenant en hauteur',
-      'Intervenant sur installation solaire': 'Intervenant sur installation solaire',
-      'Monteur / Démonteur échafaudage': 'Monteur / Démonteur échafaudage',
-      'Responsable HSE chantier': 'Responsable HSE chantier',
-      'Technicien-manœuvre': 'Technicien-manœuvre',
-      'Vérificateur échafaudage': 'Vérificateur échafaudage',
-    }
-  },
-  en: {
-    noChange: 'No change', ready: 'Ready',
-    companies: ' contractors', profiles: ' profiles', found: ' found',
-    high: 'High', medium: 'Medium', low: 'Low',
-    nature: {
-      'Transport': 'Transport',
-      'Levage et manutention': 'Lifting & Handling',
-      'Travaux de fouille': 'Excavation & Trenching',
-      'Contrôle - Supervision': 'Inspection & Supervision',
-      'Travaux en hauteur': 'Working at Height',
-      'Travaux sur système alimentés en énergie électrique': 'Work on Electrical Systems',
-      'Travaux en espace confiné': 'Confined Space Entry',
-      'Production / Usine': 'Production / Plant',
-      'Lutte contre incendie': 'Fire Fighting',
-    },
-    el: {
-      'gestion des travaux': 'Permit to Work',
-      'travaux en espace confiné': 'Confined Space Entry',
-      'travaux à chaud': 'Hot Work',
-      'opérations de levage': 'Lifting & Rigging',
-      'consignation': 'Isolation / LOTO',
-      'consignation mécanique': 'Mechanical Isolation',
-      'travaux en hauteur': 'Working at Height',
-      'travaux de fouille et d\'excavation': 'Excavation & Trenching',
-      'permis poid lourd': 'HGV Licence',
-    },
-    doc: {
-      'habilitation engin de chantier': 'Construction Equipment Operator Licence',
-      'gestion des travaux': 'Permit to Work Certificate',
-      'habilitation manoeuvre et manutention': 'Lifting & Handling Authorisation',
-      'habilitation électrique': 'Electrical Authorisation',
-      'habilitation pemp': 'MEWP Authorisation',
-      'habilitation conduite pemp': 'MEWP Operator Licence',
-      'habilitation travaux en hauteur': 'Working at Height Authorisation',
-      'habilitation monteur/ démonteur échafaudage': 'Scaffolding Erection/Dismantling Certificate',
-      'habilitation montage echafaudage': 'Scaffolding Erection Certificate',
-      'habilitation vérificateur échafaudage': 'Scaffolding Inspection Certificate',
-      'caces ou équivalent grue': 'Crane Operator Licence (CACES or equiv.)',
-      'habilitation conduite grue': 'Crane Operator Licence',
-      'formation spécialisée elingueur': 'Slinger / Signaller Certification',
-      'habilitation élingueur': 'Slinger Authorisation',
-      'formation hse solarisation': 'Solar HSE Training',
-      'permis de conduire g': 'Construction Vehicle Licence (Cat. G)',
-    },
-    profil: {
-      'Chauffeur pl': 'HGV Driver', 'Chauffeur vl': 'Light Vehicle Driver',
-      'Chef de chantier': 'Site Supervisor', 'Chef de manœuvre': 'Lifting Crew Leader',
-      'Chef de site': 'Site Manager', 'Conducteur d\'engin de chantier': 'Plant / Equipment Operator',
-      'Conducteur de nacelle élévatrice': 'MEWP Operator',
-      'Électricien': 'Electrician', 'Élingueur': 'Slinger / Signaller', 'Grutier': 'Crane Operator',
-      'Intervenant en espace confiné': 'Confined Space Operative',
-      'Intervenant en hauteur': 'Working at Height Operative',
-      'Intervenant sur installation solaire': 'Solar Panel Operative',
-      'Monteur / Démonteur échafaudage': 'Scaffolding Erector / Dismantler',
-      'Responsable HSE chantier': 'Site HSE Officer',
-      'Technicien-manœuvre': 'General Operative',
-      'Vérificateur échafaudage': 'Scaffolding Inspector',
-    }
-  }
-};
-
-// ── COMPANY ──
-let companyFilter = '';
+var companyFilter = '';
 function filterCompany(q) { companyFilter = q.toLowerCase(); renderCompany(); }
+
 function renderCompany() {
-  const sort = document.getElementById('sortCompany').value;
-  let rows = companyData.filter(d => !companyFilter || d.e.toLowerCase().includes(companyFilter) || d.p.some(p => p.includes(companyFilter)));
-  if (sort === 'desc') rows.sort((a,b) => b.n - a.n);
-  else if (sort === 'asc') rows.sort((a,b) => a.n - b.n);
-  else rows.sort((a,b) => a.e.localeCompare(b.e));
-  const t = T[lang];
-  const bc = n => n >= 100 ? 'badge-high' : n >= 20 ? 'badge-mid' : 'badge-low';
-  const lbl = n => n >= 100 ? t.high : n >= 20 ? t.medium : t.low;
-  const bar = w => `<div class="bar-wrap"><div class="bar-fill" style="width:${w}%"></div></div>`;
-  const profileCell = (profiles) => {
-    const MAX = 3;
-    const visible = profiles.slice(0, MAX);
-    const hidden = profiles.slice(MAX);
-    let html = visible.map(p => `<span class="profile-tag">${p}</span>`).join('');
-    if (hidden.length > 0) {
-      const allProfiles = profiles.join('\n');
-      html += `<span class="profile-tag more-tag" title="${hidden.join(', ')}" style="background:#2F5496;color:#fff;cursor:pointer;margin-left:3px">+${hidden.length}</span>`;
+  var sort = document.getElementById('sortCompany').value;
+  var rows = companyData.filter(function(d) {
+    return !companyFilter || d.e.toLowerCase().includes(companyFilter) || d.p.some(function(p) { return p.includes(companyFilter); });
+  });
+  if (sort === 'desc') rows.sort(function(a,b) { return b.n - a.n; });
+  else if (sort === 'asc') rows.sort(function(a,b) { return a.n - b.n; });
+  else rows.sort(function(a,b) { return a.e.localeCompare(b.e); });
+
+  var bc = function(n) { return n >= 100 ? 'badge-high' : n >= 20 ? 'badge-mid' : 'badge-low'; };
+  var lbl = function(n) { return n >= 100 ? (lang==='fr'?'Fort':'High') : n >= 20 ? (lang==='fr'?'Moyen':'Medium') : (lang==='fr'?'Faible':'Low'); };
+
+  var tbody = document.getElementById('companyTbody');
+  tbody.innerHTML = '';
+  rows.forEach(function(d) {
+    var tr = document.createElement('tr');
+
+    var tdName = document.createElement('td');
+    tdName.style.fontWeight = '500';
+    tdName.textContent = d.e;
+    tr.appendChild(tdName);
+
+    var tdN = document.createElement('td');
+    tdN.className = 'center';
+    var barWrap = document.createElement('div');
+    barWrap.className = 'bar-wrap';
+    var barFill = document.createElement('div');
+    barFill.className = 'bar-fill';
+    barFill.style.width = Math.round(d.n / maxUsers * 100) + '%';
+    barWrap.appendChild(barFill);
+    tdN.appendChild(document.createTextNode(d.n + ' '));
+    tdN.appendChild(barWrap);
+    tr.appendChild(tdN);
+
+    var tdBadge = document.createElement('td');
+    tdBadge.className = 'center';
+    var badge = document.createElement('span');
+    badge.className = 'badge ' + bc(d.n);
+    badge.textContent = lbl(d.n);
+    tdBadge.appendChild(badge);
+    tr.appendChild(tdBadge);
+
+    var tdProfiles = document.createElement('td');
+    tdProfiles.style.cssText = 'white-space:normal;max-width:280px';
+    var MAX = 3;
+    d.p.slice(0, MAX).forEach(function(p) {
+      var span = document.createElement('span');
+      span.className = 'profile-tag';
+      span.textContent = p;
+      tdProfiles.appendChild(span);
+    });
+    if (d.p.length > MAX) {
+      var more = document.createElement('span');
+      more.className = 'profile-tag';
+      more.style.cssText = 'background:#2F5496;color:#fff;cursor:pointer;margin-left:3px';
+      more.title = d.p.slice(MAX).join(', ');
+      more.textContent = '+' + (d.p.length - MAX);
+      tdProfiles.appendChild(more);
     }
-    return html;
-  };
-  document.getElementById('companyTbody').innerHTML = rows.map(d => `<tr><td style="font-weight:500">${d.e}</td><td class="center">${d.n} ${bar(Math.round(d.n/maxUsers*100))}</td><td class="center"><span class="badge ${bc(d.n)}">${lbl(d.n)}</span></td><td style="white-space:normal;max-width:280px">${profileCell(d.p)}</td></tr>`).join('');
-  document.getElementById('companyCount').textContent = rows.length + t.companies;
+    tr.appendChild(tdProfiles);
+    tbody.appendChild(tr);
+  });
+  document.getElementById('companyCount').textContent = rows.length + (lang === 'fr' ? ' entreprises' : ' contractors');
 }
 
-// ── PROFILE ──
-let profileFilter = '';
+var profileFilter = '';
 function filterProfile(q) { profileFilter = q.toLowerCase(); renderProfile(); }
+
 function renderProfile() {
-  const sort = document.getElementById('sortProfile').value;
-  const total = d => d.conforme + d.nonconf;
-  let rows = profileData.filter(d => !profileFilter || d.profil.toLowerCase().includes(profileFilter) || d.hq.toLowerCase().includes(profileFilter));
-  if (sort === 'users') rows.sort((a,b) => total(b) - total(a));
-  else if (sort === 'ent') rows.sort((a,b) => b.ent - a.ent);
-  else rows.sort((a,b) => b.conforme - a.conforme);
-  const gc = p => p >= 70 ? '#16A34A' : p >= 50 ? '#D97706' : '#DC2626';
-  const t = T[lang];
-  document.getElementById('profileTbody').innerHTML = rows.map(d => {
-    const changes = [...d.add_el.map(x=>`<span class="change-add">+ ${t.el[x.toLowerCase()]||x}</span>`), ...d.add_doc.map(x=>`<span class="change-add">+ ${t.doc[x.toLowerCase()]||x}</span>`), ...d.rm_el.map(x=>`<span class="change-rm">− ${t.el[x.toLowerCase()]||x}</span>`), ...d.rm_doc.map(x=>`<span class="change-rm">− ${t.doc[x.toLowerCase()]||x}</span>`)].join('');
-    const gauge = `<div class="gauge-wrap"><div class="gauge-fill" style="width:${d.pct}%;background:${gc(d.pct)}"></div></div>`;
-    return `<tr><td style="font-weight:500">${t.profil[d.profil]||d.profil}</td><td style="color:#555;font-size:12px">${d.hq}</td><td class="center" style="color:#16A34A;font-weight:600">${d.conforme}</td><td class="center" style="color:#DC2626;font-weight:600">${d.nonconf}</td><td class="center">${d.pct}% ${gauge}</td><td class="center">${d.ent}</td><td style="max-width:280px;white-space:normal">${changes || `<span class="change-none">${t.noChange}</span>`}</td></tr>`;
-  }).join('');
-  document.getElementById('profileCount').textContent = rows.length + t.profiles;
+  var sort = document.getElementById('sortProfile').value;
+  var rows = profileData.filter(function(d) {
+    return !profileFilter || d.profil.toLowerCase().includes(profileFilter) || d.hq.toLowerCase().includes(profileFilter);
+  });
+  if (sort === 'users') rows.sort(function(a,b) { return (b.conforme+b.nonconf) - (a.conforme+a.nonconf); });
+  else if (sort === 'ent') rows.sort(function(a,b) { return b.ent - a.ent; });
+  else rows.sort(function(a,b) { return b.conforme - a.conforme; });
+
+  var gc = function(p) { return p >= 70 ? '#16A34A' : p >= 50 ? '#D97706' : '#DC2626'; };
+  var noChange = lang === 'fr' ? 'Aucun changement' : 'No change';
+
+  var tbody = document.getElementById('profileTbody');
+  tbody.innerHTML = '';
+
+  rows.forEach(function(d) {
+    var tr = document.createElement('tr');
+
+    function td(content, styles) {
+      var el = document.createElement('td');
+      if (styles) el.style.cssText = styles;
+      if (typeof content === 'string') el.textContent = content;
+      else el.appendChild(content);
+      return el;
+    }
+
+    tr.appendChild(td(d.profil, 'font-weight:500;white-space:normal;min-width:160px'));
+    tr.appendChild(td(d.hq, 'color:#555;font-size:12px;white-space:normal;min-width:160px'));
+
+    var tdC = document.createElement('td'); tdC.className = 'center'; tdC.style.cssText = 'color:#16A34A;font-weight:600'; tdC.textContent = d.conforme; tr.appendChild(tdC);
+    var tdNC = document.createElement('td'); tdNC.className = 'center'; tdNC.style.cssText = 'color:#DC2626;font-weight:600'; tdNC.textContent = d.nonconf; tr.appendChild(tdNC);
+
+    var tdPct = document.createElement('td'); tdPct.className = 'center';
+    var gaugeWrap = document.createElement('div'); gaugeWrap.className = 'gauge-wrap';
+    var gaugeFill = document.createElement('div'); gaugeFill.className = 'gauge-fill';
+    gaugeFill.style.width = d.pct + '%'; gaugeFill.style.background = gc(d.pct);
+    gaugeWrap.appendChild(gaugeFill);
+    tdPct.textContent = d.pct + '% '; tdPct.appendChild(gaugeWrap);
+    tr.appendChild(tdPct);
+
+    var tdEnt = document.createElement('td'); tdEnt.className = 'center'; tdEnt.textContent = d.ent; tr.appendChild(tdEnt);
+
+    var tdChanges = document.createElement('td'); tdChanges.style.cssText = 'max-width:280px;white-space:normal';
+    var hasChange = false;
+    d.add_el.forEach(function(x) { var s = document.createElement('span'); s.className = 'change-add'; s.textContent = '+ ' + x; tdChanges.appendChild(s); hasChange = true; });
+    d.add_doc.forEach(function(x) { var s = document.createElement('span'); s.className = 'change-add'; s.textContent = '+ ' + x; tdChanges.appendChild(s); hasChange = true; });
+    d.rm_el.forEach(function(x) { var s = document.createElement('span'); s.className = 'change-rm'; s.textContent = '− ' + x; tdChanges.appendChild(s); hasChange = true; });
+    d.rm_doc.forEach(function(x) { var s = document.createElement('span'); s.className = 'change-rm'; s.textContent = '− ' + x; tdChanges.appendChild(s); hasChange = true; });
+    if (!hasChange) { var s = document.createElement('span'); s.className = 'change-none'; s.textContent = noChange; tdChanges.appendChild(s); }
+    tr.appendChild(tdChanges);
+    tbody.appendChild(tr);
+  });
+  document.getElementById('profileCount').textContent = rows.length + (lang === 'fr' ? ' profils' : ' profiles');
 }
 
-// ── DETAIL ──
-let detailFilter = '';
+var detailFilter = '';
 function filterDetail(q) { detailFilter = q.toLowerCase(); renderDetail(); }
+
 function renderDetail() {
-  const sort = document.getElementById('sortDetail').value;
-  let rows = detailData.filter(d => !detailFilter || d.profil.toLowerCase().includes(detailFilter) || d.hq.toLowerCase().includes(detailFilter) || d.nature.toLowerCase().includes(detailFilter));
-  if (sort === 'nonconf') rows.sort((a,b) => b.nonconf - a.nonconf);
-  else if (sort === 'pct_asc') rows.sort((a,b) => a.pct - b.pct);
-  else if (sort === 'pct_desc') rows.sort((a,b) => b.pct - a.pct);
-  else rows.sort((a,b) => a.profil.localeCompare(b.profil));
+  var sort = document.getElementById('sortDetail').value;
+  var rows = detailData.filter(function(d) {
+    return !detailFilter || d.profil.toLowerCase().includes(detailFilter) || d.hq.toLowerCase().includes(detailFilter) || d.nature.toLowerCase().includes(detailFilter);
+  });
+  if (sort === 'nonconf') rows.sort(function(a,b) { return b.nonconf - a.nonconf; });
+  else if (sort === 'pct_asc') rows.sort(function(a,b) { return a.pct - b.pct; });
+  else if (sort === 'pct_desc') rows.sort(function(a,b) { return b.pct - a.pct; });
+  else rows.sort(function(a,b) { return a.profil.localeCompare(b.profil); });
 
-  const gc = p => p >= 70 ? '#16A34A' : p >= 50 ? '#D97706' : '#DC2626';
-  const t = T[lang];
-  const tags = (arr, cls, map) => arr.length ? arr.map(x => `<span class="${cls}">${map[x.toLowerCase()]||x}</span>`).join(' ') : '<span class="change-none">—</span>';
+  var gc = function(p) { return p >= 70 ? '#16A34A' : p >= 50 ? '#D97706' : '#DC2626'; };
+  var ready = lang === 'fr' ? 'Prêt' : 'Ready';
+  var dash = '<span class="change-none">—</span>';
 
-  document.getElementById('detailTbody').innerHTML = rows.map(d => {
-    const gauge = `<div class="gauge-wrap"><div class="gauge-fill" style="width:${d.pct}%;background:${gc(d.pct)}"></div></div>`;
-    return `<tr>
-      <td style="font-weight:500;white-space:normal;min-width:140px">${t.profil[d.profil]||d.profil}</td>
-      <td style="color:#555;font-size:12px;white-space:normal;min-width:150px">${d.hq}</td>
-      <td style="font-size:11px;color:#666;white-space:normal;min-width:130px">${t.nature[d.nature]||d.nature}</td>
-      <td class="center" style="color:#16A34A;font-weight:600">${d.conforme}</td>
-      <td class="center" style="color:#DC2626;font-weight:600">${d.nonconf}</td>
-      <td class="center">${d.pct}% ${gauge}</td>
-      <td style="white-space:normal;min-width:150px">${tags(d.el_add, 'change-rm', t.el)}</td>
-      <td style="white-space:normal;min-width:150px">${tags(d.el_rm, 'change-add', t.el)}</td>
-      <td style="white-space:normal;min-width:150px">${tags(d.doc_add, 'change-rm', t.doc)}</td>
-      <td style="white-space:normal;min-width:150px">${tags(d.doc_rm, 'change-add', t.doc)}</td>
-      <td class="center"><span class="badge badge-ready">${t.ready}</span></td>
-    </tr>`;
-  }).join('');
-  document.getElementById('detailCount').textContent = rows.length + t.profiles;
+  var tbody = document.getElementById('detailTbody');
+  tbody.innerHTML = '';
+
+  rows.forEach(function(d) {
+    var tr = document.createElement('tr');
+
+    function tdText(txt, styles) {
+      var el = document.createElement('td');
+      if (styles) el.style.cssText = styles;
+      el.textContent = txt;
+      return el;
+    }
+
+    tr.appendChild(tdText(d.profil, 'font-weight:500;white-space:normal;min-width:140px'));
+    tr.appendChild(tdText(d.hq, 'color:#555;font-size:12px;white-space:normal;min-width:150px'));
+    tr.appendChild(tdText(d.nature, 'font-size:11px;color:#666;white-space:normal;min-width:130px'));
+
+    var tdC = document.createElement('td'); tdC.className = 'center'; tdC.style.cssText = 'color:#16A34A;font-weight:600'; tdC.textContent = d.conforme; tr.appendChild(tdC);
+    var tdNC = document.createElement('td'); tdNC.className = 'center'; tdNC.style.cssText = 'color:#DC2626;font-weight:600'; tdNC.textContent = d.nonconf; tr.appendChild(tdNC);
+
+    var tdPct = document.createElement('td'); tdPct.className = 'center';
+    var gw = document.createElement('div'); gw.className = 'gauge-wrap';
+    var gf = document.createElement('div'); gf.className = 'gauge-fill';
+    gf.style.width = d.pct + '%'; gf.style.background = gc(d.pct);
+    gw.appendChild(gf); tdPct.textContent = d.pct + '% '; tdPct.appendChild(gw);
+    tr.appendChild(tdPct);
+
+    function tagsCell(arr, cls, minWidth) {
+      var td = document.createElement('td'); td.style.cssText = 'white-space:normal;min-width:' + minWidth + 'px';
+      if (arr.length === 0) { td.innerHTML = dash; }
+      else { arr.forEach(function(x) { var s = document.createElement('span'); s.className = cls; s.textContent = x; td.appendChild(s); td.appendChild(document.createTextNode(' ')); }); }
+      return td;
+    }
+
+    tr.appendChild(tagsCell(d.el_add, 'change-rm', 150));
+    tr.appendChild(tagsCell(d.el_rm, 'change-add', 150));
+    tr.appendChild(tagsCell(d.doc_add, 'change-rm', 150));
+    tr.appendChild(tagsCell(d.doc_rm, 'change-add', 150));
+
+    var tdStatus = document.createElement('td'); tdStatus.className = 'center';
+    var badge = document.createElement('span'); badge.className = 'badge badge-ready'; badge.textContent = ready;
+    tdStatus.appendChild(badge); tr.appendChild(tdStatus);
+
+    tbody.appendChild(tr);
+  });
+  document.getElementById('detailCount').textContent = rows.length + (lang === 'fr' ? ' profils' : ' profiles');
 }
 
-// ── INIT ──
 renderCompany(); renderProfile(); renderDetail(); updateMatrixCount();
-document.querySelectorAll('#mainTable td').forEach(cell => {
-  const text = cell.innerText.trim();
+
+// Tooltip sur les cellules tronquées de la matrice (onglet 1)
+document.querySelectorAll('#mainTable td').forEach(function(cell) {
+  var text = cell.innerText.trim();
   if (!text || text === 'X') return;
   cell.setAttribute('title', text);
 });
